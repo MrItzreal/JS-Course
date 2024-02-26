@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+    <style>
+      body {
+        background-color: rgb(37, 104, 112);
+      }
+    </style>
+  </head>
+  <body>
+    <button>hello</button>
+    <button class="js-button">Second button</button>
+
+    <script>
+      /*document.querySelector lets us get any
+       element from the page and puts it inside JS*/
+      console.log(document.querySelector("button").innerHTML);
+      document.querySelector("button").innerHTML = "Changed";
+
+      //adding a class element to our querySelector
+      //when naming a variable is good practice to specify Element or Elem in it
+      const buttonElement = document.querySelector(".js-button");
+      console.log(buttonElement);
+
+      /*console.log(document.title);
+       document.title = "Changed";
+
+       console.log(document.body);
+       console.log(typeof document.body);
+       console.log(document.body.innerHTML);
+       document.body.innerHTML = "<button>Good Job!</button>";\
+       */
+
+      // the DOM represents/models the webpage
+      //DOM combines HTML & JS together
+      //method are functions saved inside objects
+
+      /* document.body.innerHTML = "hello";
+       document.title = "Good job!";*/
+    </script>
+  </body>
+</html>

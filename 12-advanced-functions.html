@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Functions</title>
+  </head>
+  <body style="background-color: darkcyan">
+    <button onclick="" class="js-button">Click</button>
+    <script>
+      /*
+        //ADD EVENT LISTENER
+        //.addEventListener() lets us run code when we interact with an element.
+        //Use .addEventListener() instead of onClick="".
+        //.addEventListener lets us add multiple event listeners for an event.
+        //.addEventListener() has 2 parameters: event & function we want to run.
+        const buttonElement = document.querySelector(".js-button");
+
+        const eventListener = () => {
+          console.log("click");
+        };
+
+        //addEventListener lets us add an event listener.
+        buttonElement.addEventListener("click", eventListener);
+
+        //.removeEventListener lets us remove an event listener.
+        //.removeEventListener has 2 parameters: event & function we want to remove.
+        //To remove you need the exact function you want not just type it,
+        //so you need to save the function inside a variable.
+        buttonElement.removeEventListener("click", eventListener);
+
+        buttonElement.addEventListener("click", () => {
+          console.log("click2");
+        }); */
+
+      /*
+        function greeting() {
+          console.log("hello");
+        }
+        greeting();
+
+        //functions are also values and we can save,
+        //a function inside a variable.
+        //Anonymous function: is a function without a name.
+        //As long as there is a way to access a function,
+        //the function does not need a name.
+        //Hoisting does not work when we create a function and save it in a variable.
+        //Method: function saved inside an object.
+        const num = 2;
+        const function1 = function () {
+          console.log("hello2");
+        };
+
+        console.log(function1);
+        console.log(typeof function1);
+        function1();
+
+        //We can save values inside objects
+        const object1 = {
+          num: 2,
+          fun: function () {
+            console.log("hello3");
+          },
+        };
+        object1.fun();
+
+        //We can pass values into a function.
+        function display(param) {
+          console.log(param);
+        }
+        display(2);
+
+        //We can pass functions into functions.
+        function run(param) {
+          param();
+        }
+        run(function () {
+          console.log("hello4");
+          //this function is called "Callback" or "Callback Function"
+          //because we are literally calling the function.
+        });
+        */
+
+      /*
+        //SET TIMEOUT & SET INTERVAL.
+
+        //setTimeout(): This method allow us to run a function once the timer expires.
+        //setTimeout is Asynchronous Code which won't wait for a line to run before going to next.
+        //Synchronous Code is the opposite of asynchronous code.
+        //setTimeout() takes 2 params:
+        //-A function we want to run in the future.
+        //-How long to wait for the function to run which is done in milliseconds.
+        //Although asynchronous the function within once triggered will run synchronously.
+
+        setTimeout(function () {
+          console.log("timeout");
+          console.log("timeout2");
+        }, 3000);
+        console.log("next line");
+
+        //setInterval() takes 2 params:
+        //-A function we want to run in the future.
+        //-How long to wait for the function to run which is done in milliseconds.
+        //setInterval will keep running the function given over and over again,
+        //unlike setTimeout which only runs it once.
+        //To stop an interval we can use clearInterval().
+
+        setInterval(function () {
+          console.log("interval");
+        }, 3000);
+        console.log("next line 2");
+        */
+
+      /*
+        //FOR EACH LOOPS.
+        //forEach loops through the array and for each value,
+        //it will save it in the parameter and run the function.
+        //forEach() is the preferred way to loop through arrays since is easier to read.
+        //forEach() don't have 'continue' to skip but they can do the same with "return".
+        //If you need to use "break" is better to use for-loop instead of forEach.
+        //When passing a function to a function is better to use arrow functions.
+        ["make dinner", "wash dishes", "watch youtube"].forEach(
+          (value, index) => {
+            if (value === "wash dishes") {
+              return;
+            }
+            console.log(index);
+            console.log(value);
+          }
+        );
+
+        //ARROW FUNCTIONS: shorter way to write regular functions.
+        //Regular function:
+        const regularFunction = function (param, param2) {
+          console.log("hello");
+          return 5;
+        };
+
+        //Arrow function:
+        const arrowFunction = (param, param2) => {
+          console.log("hello");
+          return 5;
+        };
+        arrowFunction();
+
+        //When an arrow function only has one parameter the round bracket is optional,
+        //VSCODE auto-adds brackets to single-param arrow functions.
+        const oneParam = (param) => {
+          console.log(param + 1);
+        };
+        oneParam(2);
+
+        //Arrow functions with single lines can be written on one line,
+        //it will return the result on the right without having to use "return".
+        const oneLine = () => 2 + 3;
+        console.log(oneLine());
+
+        // NOTE:
+        const autoPlay = () =>{}
+        This is the => version of the function below but we wont change it
+        because the version below is easier to read and enables "Hoisting" which
+        lets us call the function before creating it and we don't have to worry in
+        which order we write the code.
+
+        function autoPlay() {
+          if (!isAutoPlaying) {
+            intervalId = setInterval(() => {
+            const playerMove = pickComputerMove();
+            playGame(playerMove);
+          }, 1000);
+          isAutoPlaying = true;
+        } else {
+          //To stop an interval we can use clearInterval().
+          clearInterval(intervalId);
+          isAutoPlaying = false;
+          }}
+
+        //We can also use arrow functions inside objects.
+        const object2 = {
+          method: () => {},
+          //object shortcut for functions called "Shorthand Method Syntax",
+          //is easier to read than arrow function.
+          method() {},
+        };
+        */
+
+      //ARRAY METHOD FILTER
+      //.filter(): Filters an array, keeping only elements matching a given criteria.
+      //It takes three parameters but you don't need to pass all three:
+      //value, index, original array.
+      console.log(
+        [1, -3, 5].filter((value, index) => {
+          /*
+            if (value >= 0) {
+              return true;
+            } else {
+              return false;
+            }*/
+          //Simpler way to the code above.
+          return value >= 0;
+        })
+      );
+
+      //ARRAY METHOD MAP
+      //.map(): Creates a new array and whatever is returned is added to the new array.
+      //map can transform an array into a new one.
+      //We can also use the 'value' in the return.
+      console.log(
+        [1, 1, 3].map((value, index) => {
+          //each commented line is a different example:
+          // return 10;
+          // return value + 10;
+          return value * 2;
+        })
+      );
+
+      //Shortcut with => functions for the code above.
+      //When arrow functions only have one parameter the round bracket is optional,
+      //VSCODE auto-adds brackets to single-param arrow functions.
+      console.log([1, 1, 3].map((value) => value * 2));
+
+      //CLOSURE
+      //Closure: is a feature of functions where if a function has access,
+      //to a value it will always have access to that value. The value gets,
+      //packaged together (enclosed) with the function.
+    </script>
+  </body>
+</html>

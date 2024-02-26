@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Objects</title>
+    <style>
+      body {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      /*
+      //Object
+      const product = {
+        name: "socks",
+        price: "1090",
+      };
+
+      //How to access the object data as a whole or separate
+      console.log(product);
+      console.log(product.name);
+      console.log(product.price);
+
+      //How to change the property value
+      product.name = "cotton socks";
+      console.log(product);
+
+      //add a new property
+      product.newProperty = true;
+      console.log(product);
+
+      //delete a property
+      delete product.newProperty;
+      console.log(product);
+      */
+
+      /*
+      //Nested Object or Object Inside an Object
+      const product2 = {
+        name: "shirt",
+        "delivery-time": "1 day",
+        rating: {
+          stars: 4.5,
+          count: 87,
+        },
+        fun: function function1() {
+          console.log("function inside object");
+        },
+      };
+
+      console.log(product2);
+      //DOT notation is the default and easier way to access values and read
+      console.log(product2.name);
+      //Bracket notation let us use properties that don't work w/ DOT notation
+      console.log(product2["name"]);
+      console.log(product2["delivery-time"]);
+      //Accessing a Nested Object
+      console.log(product2.rating.count);
+      //Accessing the value of the property which has a function within
+      product2.fun();
+      //JSON double quotes everything by default but it does not take functions
+      console.log(JSON.stringify(product2));
+      //JSON.stringify converts JavaScript objects into strings
+      const jsonString = JSON.stringify(product2);
+      //JSON.parse converts JSON String back to JS Object
+      console.log(JSON.parse(jsonString));
+      //localStorage.setItem allows you to store data locally on the user's browser.
+      //localStorage only supports strings
+      localStorage.setItem("score", JSON.stringify(score));
+      //localStorage.getItem allows you to retrieve a single value stored locally
+      const score = JSON.parse(localStorage.getItem("score"));
+      */
+
+      /*objects are references this means that if you have multiple properties within
+        your object you can simply use the name of the function instead of having to type
+        every value inside the mentioned object for example the code below.
+      */
+      console.log("hello".length);
+      console.log("hello".toUpperCase());
+
+      const object1 = {
+        message: "hello",
+      };
+      const object2 = object1;
+
+      object1.message = "Good job!";
+      console.log(object1);
+      console.log(object2);
+
+      const object3 = {
+        message: "Good job!",
+      };
+      /*when comparing variables that contain objects you are only
+      comparing the references and not the values inside*/
+      console.log(object3 === object1);
+      console.log(object2 === object1);
+
+      const object4 = {
+        message: "Good job!",
+        price: 799,
+      };
+      /*This code: const message = object4.message is the same
+        as below but is using Destructuring which is a easier
+        way to take properties out of objects*/
+      const { message, price } = object4;
+      console.log(message);
+      console.log(price);
+
+      const object5 = {
+        // message: message
+        message,
+        // method: function function1() {
+        //   console.log("method");},
+
+        // below same code as above using Shorthand Method
+        method() {
+          console.log("method");
+        },
+      };
+      console.log(object5);
+      object5.method();
+    </script>
+  </body>
+</html>
